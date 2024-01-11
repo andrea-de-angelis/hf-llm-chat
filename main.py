@@ -40,15 +40,22 @@ if __name__ == "__main__":
     config.read("conf.env")
     hf_loging_token = config["HF"]["HUGGINGFACE_LOGIN_TOKEN"]
     
-    model = "meta-llama/Llama-2-7b-chat-hf"
+    model_id = "meta-llama/Llama-2-7b-chat-hf"
 
-    tokenizer = AutoTokenizer.from_pretrained(model)
-    pipeline = transformers.pipeline(
-        "text-generation",
-        model=model,
+    tokenizer = AutoTokenizer.from_pretrained(model_id)
+    
+    model = AutoModelForCausalLM.from_pretrained(
+        model_id,
         torch_dtype=torch.float16,
-        device_map="auto",
-    )
+        rope_scaling={"type": "dynamic", "factor": 2.0}
+    ).to('cuda')
+    
+    # pipeline = transformers.pipeline(
+    #     "text-generation",
+    #     model=model,
+    #     torch_dtype=torch.float16,
+    #     device_map="auto",
+    # )
     
     lang_code2language = {
         'eng': 'English',
@@ -65,20 +72,27 @@ if __name__ == "__main__":
         for i, row in df.iterrows():
             prompt = create_prompt(lang_code2language[lang_code], row.clean_text)
         
-            sequences = pipeline(
-                prompt[:1000],
-                do_sample=True,
-                top_k=10,
-                num_return_sequences=1,
-                eos_token_id=tokenizer.eos_token_id,
-                max_length=1000,
-            )
+            # sequences = pipeline(
+            #     prompt[:1000],
+            #     do_sample=True,
+            #     top_k=10,
+            #     num_return_sequences=1,
+            #     eos_token_id=tokenizer.eos_token_id,
+            #     max_length=1000,
+            # )
+            
+            inputs = tokenizer(prompt[:1000], return_tensors="pt").to('cuda')
+            gen_out = model.generate(**inputs, max_new_tokens=1000)
+            
+            answer = tokenizer.decode(gen_out[0], skip_special_tokens=True)
+            df.at[i, 'answer'] = answer
 
-            answer = ''
-            for seq in sequences:
-                answer += seq['generated_text']
+            # answer = ''
+            # for seq in sequences:
+            #     answer += seq['generated_text']
                 
-            df.at[i, 'answer'] = seq['generated_text']
+            # df.at[i, 'answer'] = seq['generated_text']
+            break
         break
     
     df.to_csv(f'output/{lang_code}.csv', index=False)
