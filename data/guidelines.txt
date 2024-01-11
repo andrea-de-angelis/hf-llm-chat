@@ -1,0 +1,58 @@
+# Guidelines
+The list of labels with their description and possible values follows.
+## Trustworthiness
+This label is used to assess whether you trust what the text is communicating or not. A text is considered trustworthy if it provides truthful and accurate information about an objective topic (e.g., a news article reporting something happend in real life).
+Conversely, a text should be considered not trustworthy in any of the following cases:
+- It provides false and untruthful information about an objective topic (e.g., fake news, conspiracy theories, etc.)
+- It contains information about a subjective topic, i.e., something that is not supported by empirical evidence and/or it’s based on beliefs and personal opinions (e.g., astrology, religion, theories that have not been scientifically proven, etc.)
+Possible values are: “yes” or “no”. A “yes” value means that you trust the text. A “no” value means that you don’t trust the text.
+## Linguistic Quality
+This label is used to indicate the linguistic quality of the text.
+Possible values are: “low”, “medium” and “high”.
+A “high” value means that the text contains neither grammatical or punctuation errors, nor typos. In addition, the text seems fluent and well written and has a structure (i.e., it contains periods and is not, for example, just a bullet point list of things).
+A “low” value, instead, indicates that the text has one or more of the following problems: grammatical mistakes, ambiguities that compromise comprehension, typos and/or incorrect punctuation.
+A “medium” value indicates that the text is generally understandable and grammatically correct, but it may have minor imperfections. It represents a middle ground between the low and high value.
+## Machine Translated
+This label is used to indicate whether the text is likely to have been automatically machine translated or written in the original language. A text is probably machine translated if it contains non-fluent text, awkward phrasing, grammar and syntax errors, lack of linguistic agreement (e.g., on gender or person), or usage of unusual punctuation.
+Possible values are: “yes” or “no”.
+A “yes” value means that the text is likely produced by a machine translation system.
+A “no” value for this label indicates that the text is likely in the original language.
+## Linguistic Intent
+This label is used to indicate the main communicative intent of the text. 
+For example, a text from an e-commerce website that contains a description of a product, might have as its main purpose to sell the product (and not to describe it or make a review of it), so the linguistic intent might be “commercial”. 
+Possible values are:
+- “biographical”: refers to texts that present information regarding a person's life, such as, for example, a biography or detailed description of an individual or obituaries.
+- “blog”: refers to texts that present personal opinions, experiences, reflections, instructions on how to do something (e.g., recipes) and also games/movies/books plots, shared by individuals or groups. Blogs can cover a wide range of topics, like food, health, sports, etc.
+- “boilerplate”: refers to texts that are not informative, useful or meaningful. Examples are pages containing error messages (e.g., “No search results” or “404 error, the page is not available”), as well as pages where most of the text comes from headers, footers, sidebars and navbars, i.e., the main content of the page is missing. Important: in case you found a “boilerplate” page, you can skip the rest of the labeling.
+- “commercial”: refers to persuasive texts that promote or describe products or services with the aim of selling them, such as, for example, a text from an e-commerce site listing details and price about a product.
+- “conversational”: refers to texts that are conversations between two or more people. Examples are forums and questions & answers websites.
+- “creative”: refers to texts that express the author's imagination and creativity, such as, for example, poems, music lyrics, literary works and stories.
+- “descriptive”: refers to texts that describe a product, a service, a company or an organization, an event or a place without having the purpose of sales, such as, for example, generic informative pages.
+- “encyclopedic”: refers to texts that provide comprehensive and objective information on various topics, such as, for example, an encyclopedia entry.
+- “legal”: refers to texts that relate to law, such as laws, regulations, contracts, terms and conditions or privacy policies of a service or website, or general legal content.
+- “news”: refers to texts that present information about events or issues, such as, for example, news reports, gossip, etc..
+- “numeric_information”: refers to texts that contain mainly numerical data, such as tables containing statistics or lists of odds on betting sites.
+- “religious”: refers to texts concerning religion, such as prayers or passages from holy books.
+- “scientific”: refers to texts coming from academic papers, technical documents or patents. 
+- “social”: refers to texts that feature content taken from social networks, such as, for example, a list of Tweets or posts from a social network.
+You can also answer with a maximum of two linguistic intents if you are on the fence.
+## Fictional/Real
+This label is used to indicate whether the nature of the text is based on real entities (i.e., events, people and places that exists in the real world) or if it’s based on fictional entities (i.e., events, people or places that did not really exist).
+Possible values are “fictional” and “real”.
+Examples of “fictional” texts are texts that report information related to fiction, such as transcripts of books that do not deal with real topics, like fictional stories, myths or legends, fake news and conspiracy theories.
+## Personally Identifiable Information (PII)
+This label is used to indicate whether sensitive information about one or more individuals is present within the text. 
+PII refers to any information that can be used to distinguish or trace the identity of an individual, such as full name (name and last name), social security number, date and place of birth, email, etc. 
+- Nicknames are not considered PII, nor is the presence of only a person's first or last name.
+- An email address is considered PII if it’s a personal address (e.g., nickname@gmail.com), while it’s not considered PII if it’s an institutional address (e.g., info@accuweather.com).
+- Famous, historical and religious figures are excluded from this category. So a text naming, for example, Garibaldi, Cristiano Ronaldo, or Francis of Assisi doesn’t contain PII (unless there is PII related to other people inside the rest of the text).
+Possible values are: “yes” or “no”. A “yes” value means that the text contains PII. A “no” value means that the text doesn’t contain PII.
+## User Generated Content (UGC)
+This label is used to indicate whether there is User Generated Content (UGC) within the text. UGC refers to content generated by users who have registered or accessed the website, such as by leaving a comment on a blog post or a review about a product or service they have purchased or used; please note that in these examples, a blog post or a product description are not considered UGC, while the comments to the blog post and the product reviews are. 
+Comments, forum's posts, personal reviews to a product are considered UGC. An example of a text that contains UGC could be a text from an airbnb's page, where there is a description of the apartment (this part is NOT considered UGC) and a list of comments/reviews from guests of the apartment (this part is considered UGC).
+Possible values are: “yes” or “no”. A “yes” value means that the text contains UGC. A “no” value means that the text doesn’t contain UGC.
+## Toxic
+This label is used to indicate whether the text has toxic or offensive or harmful content. A toxic or offensive text is one that sends a negative message, such as hate speech, and/or contains profanity.
+Possible values are: “yes” or “no”. A "yes" value means that toxic content has been identified in the text. A "no" means that no toxic content has been identified.
+
+For each of these labels you must answer using only the possible values given in the guidelines. If you don't know the answer, answer with the one that most closely matches your thinking or leave it blank.

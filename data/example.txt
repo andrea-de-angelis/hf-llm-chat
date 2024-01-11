@@ -1,0 +1,27 @@
+An example of how the task should be done follows. You are provided with a text, a reasoning and the final answer. The reasoning is reported only to let you understand the example. Remember to answer only with a JSON, as in the Answer section that follows.
+# Text:
+Free fortune telling online. Tarot cards. Divination by three cards.
+How to start:
+For the beginning of tarot divination by three cards, you need choose your favorite deck of tarot cards and put a pointer in front of this deck. Then press and hold the left mouse button on the image of card back. When you will are ready to see the result of divination - just release the button.
+Information:
+This divination tells to you about the three cards of tarot that have an impact on your past, present and future. Each of the time corresponds to card of tarot. So you can make the whole picture of what is now happening and to think about your future. This variant of cartomancy is a very simple and informative.
+# Reasoning:
+- The text is about tarot, which have no scientific value and are definitely a subjective topic. Following the Guidelines, therefore, I do not trust this content.
+- There are a lot of errors in the text (e.g., "For the beginning of tarot divination by three cards" it's a weird sentence). So linguistic quality is low
+- Text is not fluent, could be automatically translated from another language
+- It's describing a free online service, so the linguistic intent is "descriptive"
+- It looks like a real service hosted online, so it's real and not fictional
+- There is no PII nor UGC nor toxic content
+# Answer
+```json
+{
+    "trustworthiness": "no",
+    "linguistic_quality": "low",
+    "machine_translated": "yes",
+    "linguistic_intent": "descriptive",
+    "fictional_real": "real",
+    "pii": "no",
+    "ugc": "no",
+    "toxic": "no"
+}
+```

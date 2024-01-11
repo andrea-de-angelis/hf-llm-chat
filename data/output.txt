@@ -1,0 +1,13 @@
+You must provide the response, i.e., text annotation, in JSON format. Example:
+```json
+{
+    "trustworthiness": "yes",
+    "linguistic_quality": "medium",
+    "machine_translated": "no",
+    "linguistic_intent": "conversational",
+    "fictional_real": "real",
+    "pii": "no",
+    "ugc": "yes",
+    "toxic": "yes"
+}
+```
